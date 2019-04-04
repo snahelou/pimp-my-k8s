@@ -1,26 +1,40 @@
 import React from 'react';
 import {
-    Text,
+    List,
+    Appear,
     Image,
-    Heading,
-    Notes,   
     Link
   } from 'spectacle';
 
 const Slide13 = (images) => (
-  <div>
-        <Heading textColor="secondary"> Kubetail </Heading>
+  <List>
+    <Appear>
+        <Image src={images.png} style={{ display: "inline-block", width: "120%"}} />
 
-        <Image src={images.gif} style={{ display: "inline-block", marginTop: "40px" , width: "80%"}} />
+    </Appear>
 
-        <Link href="https://github.com/johanhaleby/kubetail"> github.com/johanhaleby/kubetail</Link>
-
-        <Notes>
-            <br/> Demo tail via selecteur multi pod (sur un nginx par exemple?)
-            <br/> Demo tail 2 containers 1 pod ? 
-        </Notes>
-  </div>
+  </List>
 
 );
 
 export default Slide13 ;
+
+/* 
+  k run nginx --image=nginx --replicas=3
+  k expose deployment nginx --port 9999 --type LoadBalancer --target-port 80
+  kubetail nginx
+
+      require 'net/http'
+      require 'uri'
+
+      (0..10000).each { |i|
+        if (i%5==0)
+          uri = URI.parse("http://localhost:9999/404")
+        else
+          uri = URI.parse("http://localhost:9999/")
+        end
+        response = Net::HTTP.get_response(uri)
+        sleep 0.7
+      }
+
+*/

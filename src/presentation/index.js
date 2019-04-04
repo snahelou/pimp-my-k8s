@@ -29,9 +29,10 @@ import "./index.css";
 // slides
 import TitleSlide from "./slides/TitleSlide.react.js";
 import PresentationSlide from "./slides/PresentationSlide.react.js";
-import Slide11 from "./slides/Slide11.react.js";
-import Slide12 from "./slides/Slide12.react.js";
+
+import  { Slide111, Slide112, Slide113 } from "./slides/Slide11.react.js";
 import Slide13 from "./slides/Slide13.react.js";
+import Slide14 from "./slides/Slide14.react.js";
 
 // Require CSS
 require('normalize.css');
@@ -54,7 +55,8 @@ const images = {
   photo: require("../assets/photo.png"),
   kubeps1gif: require("../assets/kube-ps1.gif"),
   kubectxdemo: require("../assets/kubectx-demo.gif"),
-  kubetail: require("../assets/kubetail.png")
+  kubectllogs: require("../assets/kubectllogs.png"),
+  kubetail: require("../assets/kubetail.gif")
 
 };
 
@@ -62,6 +64,17 @@ function getImage(img) {
   return images[img].replace("/", "");
 }
 
+
+/*
+  Idée: Utiliser l'app Go de Squash pour faire une chaine de bout en bout... 
+
+  J'ai mon code... 
+  Je le kubernetise )> Partie YAML  // Explain - Dryrun - Kubescore 
+  Je le déploie > Kube capacity / Helm diff / Helm test
+  Je check kubetail / tubectl 
+  Je troubleshoot / Squash - Kubefwd 
+  
+*/ 
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -82,48 +95,60 @@ export default class Presentation extends React.Component {
 
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
 
+        {/* I love yaml... Or not...  */}
+
+        {/*  kubectl explain statefulset.spec.template.spec */}
+        {/*  Dry run  */}
+        {/* Kube-score */}
+
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
+        {/* It's time to deploy  */}
+
+        {/* https://github.com/robscott/kube-capacity?utm_sq=fzz4jx87q0 kubectl krew install resource-capacity */}
+        {/*  Helm diff */}
+        {/*  Helm test */}
+
+
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
+        {/* I see what's happens */}
+
         <Slide transition={["fade"]} bgColor="primary">
-          <Slide11 
+          <Slide111/>
+        </Slide>
+        
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide112
             kubectxdemo={images.kubectxdemo}
           />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary">
-          <Slide12 
+          <Slide113
             gif={images.kubeps1gif}
           />
         </Slide>
         
         <Slide transition={["fade"]} bgColor="primary">
           <Slide13
+            png={images.kubectllogs}
+          />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide14
             gif={images.kubetail}
           />
         </Slide>
+
+        {/* tubectl  / tubectl +syst get po kube% / tubectl logs -f nginx%% / tubectl +def delete po nginx% --force --grace-period 0 / */}
         
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
+        {/* I troubleshoot like a boss */}
 
+        {/* kubefwd svc */}
+        {/* Squash */}
 
-        <Slide transition={["fade"]}>
-          <Heading caps textFont="primary" textColor="secondary">♥️ pipelines</Heading>
-          <List>
-            <Appear><ListItem>Time To Market</ListItem></Appear>
-            <Appear><ListItem>Teamwork and Collaboration</ListItem></Appear>
-            <Appear><ListItem>Reduced risks and development costs </ListItem></Appear>
-            <Appear><ListItem>Rapid feedback</ListItem></Appear>
-            <Appear><ListItem>Fail-fast</ListItem></Appear>
-            <Appear><ListItem>End-to-end security</ListItem></Appear>
-          </List>
-          <Notes>
-          <List>
-            <ListItem>Time To Market</ListItem>
-            <ListItem>Teamwork and Collaboration</ListItem>
-            <ListItem>Reduced risks and costs of development</ListItem>
-            <ListItem>Rapid feedback</ListItem>
-            <ListItem>Fail-fast</ListItem>
-            <ListItem>End-to-end security</ListItem>
-          </List>
-          </Notes>
-        </Slide>
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
 
       </Deck>
     );
