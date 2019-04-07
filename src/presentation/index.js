@@ -3,21 +3,8 @@ import React from 'react';
 
 // Import Spectacle Core tags
 import {
-  BlockQuote,
-  Cite,
   Deck,
-  Heading,
-  Image,
-  List,
-  ListItem,
-  Notes,
-  Quote,
-  Slide,
-  Appear,
-  Link,
-  S,
-  Text
-  
+  Slide,  
 } from 'spectacle';
 
 // Import theme
@@ -30,9 +17,9 @@ import "./index.css";
 import TitleSlide from "./slides/TitleSlide.react.js";
 import PresentationSlide from "./slides/PresentationSlide.react.js";
 
-import  { Slide111, Slide112, Slide113 } from "./slides/Slide11.react.js";
-import Slide13 from "./slides/Slide13.react.js";
-import Slide14 from "./slides/Slide14.react.js";
+import  { Slide111, Slide112, Slide113, Slide114, Slide115 } from "./slides/Slide11.react.js";
+import  { Slide101, Slide102, Slide104, Slide105 } from "./slides/Slide10.react.js";
+
 
 // Require CSS
 require('normalize.css');
@@ -53,6 +40,11 @@ const theme = createTheme(
 const images = {
   zenika_logo: require("../assets/zenika-logo.png"),
   photo: require("../assets/photo.png"),
+
+  explain: require("../assets/explain.gif"),
+  dryrun: require("../assets/dryrun.png"),
+  kubescore: require("../assets/kube-score.png"),
+
   kubeps1gif: require("../assets/kube-ps1.gif"),
   kubectxdemo: require("../assets/kubectx-demo.gif"),
   kubectllogs: require("../assets/kubectllogs.png"),
@@ -96,10 +88,28 @@ export default class Presentation extends React.Component {
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
 
         {/* I love yaml... Or not...  */}
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide101/>
+        </Slide>
 
-        {/*  kubectl explain statefulset.spec.template.spec */}
-        {/*  Dry run  */}
-        {/* Kube-score */}
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide102            
+            explain={images.explain}
+          />
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide104            
+            dryrun={images.dryrun}
+          />
+        </Slide>
+
+
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide105          
+            kubescore={images.kubescore}
+          />
+        </Slide>
 
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
         {/* It's time to deploy  */}
@@ -129,13 +139,13 @@ export default class Presentation extends React.Component {
         </Slide>
         
         <Slide transition={["fade"]} bgColor="primary">
-          <Slide13
+          <Slide114
             png={images.kubectllogs}
           />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary">
-          <Slide14
+          <Slide115
             gif={images.kubetail}
           />
         </Slide>
