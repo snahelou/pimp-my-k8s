@@ -3,19 +3,41 @@ import {
   Text,
   Image,
   List,
-  ListItem,
   Heading,
   Notes,
   Appear,
-  Link
+  Link,
+  ListItem
 } from 'spectacle';
 
 const Slide111 = (images) => (
   <List>
-    <Appear><Text bold textColor="secondary" textSize="1.9em" style={{ marginTop: "50px" }} >Playing with multiple clusters?</Text></Appear>
-    <Appear><Text bold textColor="secondary" textSize="1.9em" style={{ marginTop: "50px" }} >Tired of applying configuration in the wrong namespace?</Text></Appear>
-    <Appear><Text bold textColor="secondary" textSize="1.9em" style={{ marginTop: "50px" }} >Don't want to modify your kubeconfig manually? </Text></Appear>
+    <Appear><Text bold textColor="secondary" textSize="1.9em" style={{ marginTop: "50px" }} >Tired of applying configuration in the wrong cluster/namespace?</Text></Appear>
+    <Appear><Text bold textColor="secondary" textSize="1.9em" style={{ marginTop: "50px" }} ></Text></Appear>
+    <Appear><Heading textColor="tertionary" style={{ marginTop: "50px" }}>Pimp your term!</Heading></Appear>
+
   </List>
+);
+
+const Slide116 = (images) => (
+  <div>
+    <Heading textColor="secondary">Misc</Heading>
+
+    <div style={{ position: 'relative' ,textAlign: 'left',  marginTop: "10px"}}> 
+
+    <Image
+      src={images.pimp}
+      style={{float: "left", borderWidth: "10", borderColor: "white", borderStyle: "solid", display: "inline-block",  marginTop:"-30px" ,marginLeft: "20px", marginRight: "40px", width: "30%" }}
+    />
+
+    <List>
+      <ListItem style={{ marginTop: "95px"}}><Link href="https://github.com/robbyrussell/oh-my-zsh">robbyrussell/oh-my-zsh</Link></ListItem>
+      <ListItem style={{ marginTop: "15px"}}><Link href="https://github.com/ahmetb/kubectl-aliases">ahmetb/kubectl-aliases</Link></ListItem>
+      <ListItem style={{ marginTop: "15px"}} ><Link href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Kubectl autocompletion</Link></ListItem>
+      <ListItem style={{ marginTop: "15px"}} ><Link href="https://github.com/kubernetes-sigs/krew">Kubernetes Krew</Link></ListItem>
+    </List>
+  </div>
+  </div>
 );
 
 const Slide112 = (images) => (
@@ -81,9 +103,28 @@ const Slide115 = (images) => (
     <Image src={images.gif} style={{ display: "inline-block", marginTop: "40px", width: "180%" }} />
 
     <Link href="https://github.com/johanhaleby/kubetail"> github.com/johanhaleby/kubetail</Link>
+    <p/>
+    <Link href="https://github.com/wercker/stern"> github.com/wercker/stern</Link>
+
     <Notes>
       <br /> Demo tail via selecteur multi pod (sur un nginx par exemple?)
       <br /> Demo tail 2 containers 1 pod ?
+    </Notes>
+  </div>
+
+);
+
+
+const Slide117 = (images) => (
+  <div>
+    <Heading textColor="secondary"> Tubekit </Heading>
+
+    <Image src={images.tubectl} style={{ display: "inline-block", marginTop: "40px", width: "70%", marginBottom: "30px" }} />
+
+    <Link href="https://github.com/reconquest/tubekit" > github.com/reconquest/tubekit</Link>
+
+    <Notes>
+        {/* tubectl  / tubectl +syst get po kube% / tubectl logs -f nginx%% / tubectl +def delete po nginx% --force --grace-period 0 / */}
     </Notes>
   </div>
 
@@ -94,5 +135,7 @@ export {
   Slide112,
   Slide113,
   Slide114,
-  Slide115
+  Slide115,
+  Slide116,
+  Slide117
 }

@@ -1,11 +1,8 @@
 import React from 'react';
 import {
-  Text,
   Image,
   List,
-  ListItem,
   Heading,
-  Notes,
   Appear,
   Link
 } from 'spectacle';

@@ -17,7 +17,8 @@ import "./index.css";
 import TitleSlide from "./slides/TitleSlide.react.js";
 import PresentationSlide from "./slides/PresentationSlide.react.js";
 
-import  { Slide111, Slide112, Slide113, Slide114, Slide115 } from "./slides/Slide11.react.js";
+import  { Slide121, Slide122, Slide123 } from "./slides/Slide12.react.js";
+import  { Slide111, Slide112, Slide113, Slide114, Slide115, Slide116, Slide117 } from "./slides/Slide11.react.js";
 import  { Slide101, Slide102, Slide104, Slide105 } from "./slides/Slide10.react.js";
 
 
@@ -45,17 +46,17 @@ const images = {
   dryrun: require("../assets/dryrun.png"),
   kubescore: require("../assets/kube-score.png"),
 
+  pimp: require("../assets/pimp.gif"),
   kubeps1gif: require("../assets/kube-ps1.gif"),
   kubectxdemo: require("../assets/kubectx-demo.gif"),
   kubectllogs: require("../assets/kubectllogs.png"),
-  kubetail: require("../assets/kubetail.gif")
+  kubetail: require("../assets/kubetail.gif"),
+  tubectl: require("../assets/tubekit.png"),
+
+  unittests: require("../assets/unittests.png"),
+  helmdiff: require("../assets/helmdiff.png")
 
 };
-
-function getImage(img) {
-  return images[img].replace("/", "");
-}
-
 
 /*
   Idée: Utiliser l'app Go de Squash pour faire une chaine de bout en bout... 
@@ -114,10 +115,22 @@ export default class Presentation extends React.Component {
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
         {/* It's time to deploy  */}
 
-        {/* https://github.com/robscott/kube-capacity?utm_sq=fzz4jx87q0 kubectl krew install resource-capacity */}
-        {/*  Helm diff */}
-        {/*  Helm test */}
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide121          
+          />
+        </Slide>
+        
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide122         
+            unittests={images.unittests}
+          />
+        </Slide>
 
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide123          
+            helmdiff={images.helmdiff}
+          />
+        </Slide>
 
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
         {/* I see what's happens */}
@@ -127,8 +140,8 @@ export default class Presentation extends React.Component {
         </Slide>
         
         <Slide transition={["fade"]} bgColor="primary">
-          <Slide112
-            kubectxdemo={images.kubectxdemo}
+          <Slide116
+            pimp={images.pimp}
           />
         </Slide>
 
@@ -138,6 +151,14 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide112
+            kubectxdemo={images.kubectxdemo}
+          />
+        </Slide>
+
+
         <Slide transition={["fade"]} bgColor="primary">
           <Slide114
             png={images.kubectllogs}
@@ -150,7 +171,11 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        {/* tubectl  / tubectl +syst get po kube% / tubectl logs -f nginx%% / tubectl +def delete po nginx% --force --grace-period 0 / */}
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide117
+            tubectl={images.tubectl}
+          />
+        </Slide>
         
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
         {/* I troubleshoot like a boss */}
