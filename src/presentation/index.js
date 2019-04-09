@@ -20,6 +20,7 @@ import PresentationSlide from "./slides/PresentationSlide.react.js";
 import  { Slide121, Slide122, Slide123 } from "./slides/Slide12.react.js";
 import  { Slide111, Slide112, Slide113, Slide114, Slide115, Slide116, Slide117 } from "./slides/Slide11.react.js";
 import  { Slide101, Slide102, Slide104, Slide105 } from "./slides/Slide10.react.js";
+import  { Slide131, Slide132, Slide133 } from "./slides/Slide13.react.js";
 
 
 // Require CSS
@@ -39,6 +40,8 @@ const theme = createTheme(
 );
 
 const images = {
+  k8s: require("../assets/k8spimped.png"),
+
   zenika_logo: require("../assets/zenika-logo.png"),
   photo: require("../assets/photo.png"),
 
@@ -54,8 +57,10 @@ const images = {
   tubectl: require("../assets/tubekit.png"),
 
   unittests: require("../assets/unittests.png"),
-  helmdiff: require("../assets/helmdiff.png")
+  helmdiff: require("../assets/helmdiff.png"),
 
+  kubefwd: require("../assets/kubefwd.gif"),
+  squash: require("../assets/squash.png")
 };
 
 /*
@@ -76,7 +81,9 @@ export default class Presentation extends React.Component {
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
 
         <Slide transition={["zoom"]} bgColor="primary">
-          <TitleSlide />
+          <TitleSlide 
+            k8s={images.k8s}
+          />
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="primary">
@@ -159,6 +166,22 @@ export default class Presentation extends React.Component {
         </Slide>
 
 
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide117
+            tubectl={images.tubectl}
+          />
+        </Slide>
+        
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
+        {/* I troubleshoot like a boss */}
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide131
+          />
+        </Slide>
+
+
         <Slide transition={["fade"]} bgColor="primary">
           <Slide114
             png={images.kubectllogs}
@@ -172,16 +195,16 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary">
-          <Slide117
-            tubectl={images.tubectl}
+          <Slide132
+            kubefwd={images.kubefwd}
           />
         </Slide>
         
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
-        {/* I troubleshoot like a boss */}
-
-        {/* kubefwd svc */}
-        {/* Squash */}
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide133
+            squash={images.squash}
+          />
+        </Slide>
 
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
 

@@ -4,7 +4,6 @@ import {
   Image,
   List,
   Heading,
-  Notes,
   Appear,
   Link
 } from 'spectacle';

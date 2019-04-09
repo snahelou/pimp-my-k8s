@@ -12,8 +12,7 @@ import {
 
 const Slide111 = (images) => (
   <List>
-    <Appear><Text bold textColor="secondary" textSize="1.9em" style={{ marginTop: "50px" }} >Tired of applying configuration in the wrong cluster/namespace?</Text></Appear>
-    <Appear><Text bold textColor="secondary" textSize="1.9em" style={{ marginTop: "50px" }} ></Text></Appear>
+    <Appear><Text bold textColor="secondary" textSize="1.7em" style={{ marginTop: "50px" }} >Tired of applying configuration in the wrong cluster/namespace?</Text></Appear>
     <Appear><Heading textColor="tertionary" style={{ marginTop: "50px" }}>Pimp your term!</Heading></Appear>
 
   </List>
@@ -100,7 +99,8 @@ const Slide115 = (images) => (
   <div>
     <Heading textColor="secondary"> Kubetail </Heading>
 
-    <Image src={images.gif} style={{ display: "inline-block", marginTop: "40px", width: "180%" }} />
+    <Image src={images.gif} 
+    style={{ borderWidth: "20", borderColor: "white", borderStyle: "solid",display: "inline-block", marginTop: "40px", width: "180%" }} />
 
     <Link href="https://github.com/johanhaleby/kubetail"> github.com/johanhaleby/kubetail</Link>
     <p/>
@@ -119,7 +119,8 @@ const Slide117 = (images) => (
   <div>
     <Heading textColor="secondary"> Tubekit </Heading>
 
-    <Image src={images.tubectl} style={{ display: "inline-block", marginTop: "40px", width: "70%", marginBottom: "30px" }} />
+    <Image src={images.tubectl} 
+    style={{ borderWidth: "30", borderColor: "white", borderStyle: "solid", display: "inline-block", marginTop: "40px", width: "70%", marginBottom: "30px" }} />
 
     <Link href="https://github.com/reconquest/tubekit" > github.com/reconquest/tubekit</Link>
 
