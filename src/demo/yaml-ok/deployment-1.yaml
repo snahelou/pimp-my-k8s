@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-service1
+  namespace: demo-yaml
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-service1
+  template:
+    metadata:
+      labels:
+        app: example-service1
+    spec:
+      containers:
+      - env:
+        - name: SERVICE2_URL
+        image: soloio/example-service1:v0.2.2
+        imagePullPolicy: Always
+        name: example-service1
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        livenessProbe:
+          timeoutSeconds: 3
+          initialDelaySeconds: 3
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          timeoutSeconds: 3
+          initialDelaySeconds: 3
+          httpGet:
+            path: /
+            port: http
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+          requests:
+            cpu: 500m
+            memory: 512Mi

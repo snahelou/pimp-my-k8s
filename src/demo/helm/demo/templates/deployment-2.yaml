@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-service2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example-service2
+  template:
+    metadata:
+      labels:
+        app: example-service2
+    spec:
+      containers:
+      - env:
+        - name: SERVICE2_URL
+        image: {{ .Values.service2.image }} 
+        imagePullPolicy: Always
+        name: example-service2
+        ports:
+        - containerPort: {{ .Values.service2.port }}
+          name: http
+          protocol: TCP
+        livenessProbe:
+          timeoutSeconds: 3
+          initialDelaySeconds: 3
+          tcpSocket:
+            port: http
+        readinessProbe:
+          tcpSocket:
+            port: http
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+          requests:
+            cpu: 500m
+            memory: 512Mi

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-service2
+  namespace: demo-yaml
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: example-service2
+  type: ClusterIP

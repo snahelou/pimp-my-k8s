@@ -1,0 +1,10 @@
+service1:
+  image: soloio/example-service1:v0.2.2
+  replicas: 1
+  port: 8080
+  readinessProbe:
+    path: /
+
+service2: 
+  image: soloio/example-service2:v0.2.2
+  port: 8080

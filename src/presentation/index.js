@@ -4,7 +4,8 @@ import React from 'react';
 // Import Spectacle Core tags
 import {
   Deck,
-  Slide,  
+  Slide,
+  Notes,
 } from 'spectacle';
 
 // Import theme
@@ -21,7 +22,7 @@ import  { Slide121, Slide122, Slide123 } from "./slides/Slide12.react.js";
 import  { Slide111, Slide112, Slide113, Slide114, Slide115, Slide116, Slide117 } from "./slides/Slide11.react.js";
 import  { Slide101, Slide102, Slide104, Slide105 } from "./slides/Slide10.react.js";
 import  { Slide131, Slide132, Slide133 } from "./slides/Slide13.react.js";
-
+import  { Slide91, Slide92, Slide93 } from "./slides/Slide09.react.js";
 
 // Require CSS
 require('normalize.css');
@@ -41,9 +42,13 @@ const theme = createTheme(
 
 const images = {
   k8s: require("../assets/k8spimped.png"),
-
   zenika_logo: require("../assets/zenika-logo.png"),
   photo: require("../assets/photo.png"),
+
+  k8s2: require("../assets/k8s2.png"),
+  curve: require("../assets/curve.png"),
+  mcgyver: require("../assets/mcgyver.jpg"),
+
 
   explain: require("../assets/explain.gif"),
   dryrun: require("../assets/dryrun.png"),
@@ -93,6 +98,25 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide91
+            k8s={images.k8s2}
+          />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide92
+            curve={images.curve}
+          />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide93
+            mcgyver={images.mcgyver}
+          />
+        </Slide>
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
 
         {/* I love yaml... Or not...  */}
@@ -205,6 +229,15 @@ export default class Presentation extends React.Component {
             squash={images.squash}
           />
         </Slide>
+
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
+
+        {/* Go further */}
+        {/* VS Cloud code */}
+        
+        {/* remerciement */}
+        {/* Sources */}
+        {/* Questions */}
 
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
 

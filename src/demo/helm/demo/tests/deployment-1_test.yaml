@@ -1,0 +1,26 @@
+suite: test deployment
+templates:
+  - deployment-1.yaml
+tests:
+  - it: should pass with the default values file
+    asserts:
+      - hasDocuments:
+          count: 1
+      - isKind:
+          of: Deployment
+      - equal:
+          path: spec.template.spec.containers[0].image
+          value: soloio/example-service1:v0.2.2
+      - isNotNull:
+          path: spec.template.spec.containers[0].livenessProbe
+      - isNull:
+          path: spec.template.spec.imagePullSecrets
+      - isNull:
+          path: spec.template.spec.volumes
+      - isNull:
+          path: spec.template.spec.initContainers
+      - isNull:
+          path: spec.template.spec.containers[0].volumeMounts
+      - equal: 
+          path: spec.template.spec.containers[0].readinessProbe.httpGet.path
+          value: "/calc"

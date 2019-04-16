@@ -14,7 +14,6 @@ const Slide111 = (images) => (
   <List>
     <Appear><Text bold textColor="secondary" textSize="1.7em" style={{ marginTop: "50px" }} >Tired of applying configuration in the wrong cluster/namespace?</Text></Appear>
     <Appear><Heading textColor="tertionary" style={{ marginTop: "50px" }}>Pimp your term!</Heading></Appear>
-
   </List>
 );
 
@@ -75,25 +74,6 @@ const Slide114 = (images) => (
   <Image src={images.png} style={{ display: "inline-block", width: "120%" }} />
 
 );
-/* 
-  k run nginx --image=nginx --replicas=3
-  k expose deployment nginx --port 9999 --type LoadBalancer --target-port 80
-  kubetail nginx
-
-      require 'net/http'
-      require 'uri'
-
-      (0..10000).each { |i|
-        if (i%5==0)
-          uri = URI.parse("http://localhost:9999/404")
-        else
-          uri = URI.parse("http://localhost:9999/")
-        end
-        response = Net::HTTP.get_response(uri)
-        sleep 0.7
-      }
-
-*/
 
 const Slide115 = (images) => (
   <div>
