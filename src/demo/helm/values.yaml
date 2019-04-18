@@ -1,10 +1,12 @@
 service1:
-  image: soloio/example-service1:v0.2.2
+  #image: soloio/example-service1:v0.2.2
+  image: snahelou22/devfest-svc-1:1.0
   replicas: 1
   port: 8080
   readinessProbe:
-    path: /
+    path: /info
 
 service2: 
-  image: soloio/example-service2:v0.2.2
+  #image: soloio/example-service2:v0.2.2
+  image: snahelou22/devfest-svc-2:1.0
   port: 8080

@@ -45,9 +45,26 @@ const Slide133 = (images) => (
   </div>
 );
 
+{/* Telepresence */}
+ 
+
+const Slide134 = (images) => (
+  <div>
+    <Heading textColor="secondary" style={{ marginTop: "-30px" }} >Telepresence</Heading>
+
+    <Image
+      src={images.telepresence}
+      style={{ borderWidth: "30", borderColor: "white", borderStyle: "solid", display: "inline-block", marginTop: "40px", width: "100%" }}
+    />
+
+    <Link href="https://www.telepresence.io" margin="60px 0 0 0" >www.telepresence.io</Link>
+
+  </div>
+);
 
 export {
   Slide131,
   Slide132,
-  Slide133
+  Slide133,
+  Slide134
 }

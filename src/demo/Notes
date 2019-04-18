@@ -1,7 +1,7 @@
 1- YAML 
 
     1. Allez je génére mon yaml 
-        k create ns demo-yaml
+        k create ns demo-yaml && kubens demo-yaml
         k run example-service1 --image=soloio/example-service1:v0.2.2 --replicas=1 --port=8080 -o yaml --dry-run
         k run example-service2 --image=soloio/example-service2:v0.2.2 --replicas=1 --port=8080 -o yaml --dry-run
         k expose deployment example-service1 --port 80 --target-port 8080 --type ClusterIP -o yaml --dry-run
@@ -22,19 +22,20 @@
 
 2- Helm 
 
-    1. On commence a templatiser ses yamls... et on déploie
+    0. Pour aller plus vite le chart est déjà préparé vite fait donc on peut l'installer avec le setting par défaut. 
         helm install --name demo ./demo --namespace demo-helm
 
     2. Par contre je devais corriger la probe... 
-        helm template ./demo | kube-score -
+        helm template . | kube-score -
 
-    2. C'est cool mais on aimerait bien que la readyness probe pointe sur /calc (pour s'assurer que tout fonctionne)
-        helm template ./demo --set service1.readinessProbe.path="/calc"| kube-score -
+    2. on aimerait bien que la readyness probe pointe sur /ping (pour s'assurer que tout fonctionne)
+        helm template . -f values.yaml | kube-score -
         
-    3. Bon et si on le mets direct en valeur par défaut ? 
+    3. Nouvele version de l'appli (/ping) ...  et si on le mets direct en valeur par défaut ? 
+
         > On modifie le values par défaut et on joue les tests
         helm unittest .
-        > Boom .. Bon donc on le mets pas par défaut :)
+        > Boom... Bon donc on le mets pas par défaut :)
         >>>> Deep dive sur les tests... 
 
     4. Du coup j'aimerai bien deploy mais comment je peux faire un diff ? 
@@ -80,4 +81,9 @@
         - J'install squash
         - command shift P 
         - squash... 
+        
+    3. Telepresence... Ok j'aimerai bien pouvoir changer complétement mon code à chaud... 
+        (coupe kubefwd)
+        k port-forward example-service1-df5fd55fd-jvdlf 8080
+        telepresence --swap-deployment example-service2 --run-shell --expose 8080:8080
         

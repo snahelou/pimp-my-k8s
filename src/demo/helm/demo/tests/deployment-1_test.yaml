@@ -23,4 +23,4 @@ tests:
           path: spec.template.spec.containers[0].volumeMounts
       - equal: 
           path: spec.template.spec.containers[0].readinessProbe.httpGet.path
-          value: "/calc"
+          value: "/"

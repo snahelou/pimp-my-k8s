@@ -21,8 +21,9 @@ import PresentationSlide from "./slides/PresentationSlide.react.js";
 import  { Slide121, Slide122, Slide123 } from "./slides/Slide12.react.js";
 import  { Slide111, Slide112, Slide113, Slide114, Slide115, Slide116, Slide117 } from "./slides/Slide11.react.js";
 import  { Slide101, Slide102, Slide104, Slide105 } from "./slides/Slide10.react.js";
-import  { Slide131, Slide132, Slide133 } from "./slides/Slide13.react.js";
+import  { Slide131, Slide132, Slide133, Slide134 } from "./slides/Slide13.react.js";
 import  { Slide91, Slide92, Slide93 } from "./slides/Slide09.react.js";
+import  { Slide140, Slide141 } from "./slides/Slide14.react.js";
 
 // Require CSS
 require('normalize.css');
@@ -65,7 +66,10 @@ const images = {
   helmdiff: require("../assets/helmdiff.png"),
 
   kubefwd: require("../assets/kubefwd.gif"),
-  squash: require("../assets/squash.png")
+  squash: require("../assets/squash.png"),
+  telepresence: require("../assets/bird-on-bricks.svg"),
+
+  question: require("../assets/question.png")
 };
 
 /*
@@ -230,15 +234,27 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide134
+            telepresence={images.telepresence}
+          />
+        </Slide>
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
 
         {/* Go further */}
         {/* VS Cloud code */}
-        
-        {/* remerciement */}
-        {/* Sources */}
-        {/* Questions */}
 
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide140
+          />
+        </Slide>
+
+        {/* Questions */}
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide141
+            question={images.question}
+          />
+        </Slide>
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
 
       </Deck>
