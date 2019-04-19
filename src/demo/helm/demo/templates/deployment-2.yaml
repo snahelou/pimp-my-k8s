@@ -27,12 +27,6 @@ spec:
           initialDelaySeconds: 3
           tcpSocket:
             port: http
-        readinessProbe:
-          timeoutSeconds: 3
-          initialDelaySeconds: 3
-          httpGet:
-            path: {{ .Values.service2.readinessProbe.path }}
-            port: http
         resources:
           limits:
             cpu: 1000m

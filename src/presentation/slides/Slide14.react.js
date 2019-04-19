@@ -1,10 +1,8 @@
 import React from 'react';
 import {
-  Text,
   Image,
   List,
   Heading,
-  Appear,
   Link,
   ListItem
 } from 'spectacle';
@@ -38,9 +36,11 @@ const Slide140 = (images) => (
 
 const Slide141 = (images) => (
   <div>
+    <Heading textColor="secondary" >Thank you!</Heading>
+
     <Image
       src={images.question}
-      style={{  display: "inline-block", marginTop: "40px", width: "50%" }}
+      style={{  display: "inline-block", marginTop: "100px", width: "50%" }}
     />
 
   </div>

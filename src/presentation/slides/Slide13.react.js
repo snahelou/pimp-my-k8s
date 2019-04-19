@@ -44,10 +44,7 @@ const Slide133 = (images) => (
 
   </div>
 );
-
-{/* Telepresence */}
  
-
 const Slide134 = (images) => (
   <div>
     <Heading textColor="secondary" style={{ marginTop: "-30px" }} >Telepresence</Heading>

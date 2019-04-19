@@ -4,7 +4,7 @@ service1:
   replicas: 1
   port: 8080
   readinessProbe:
-    path: /info
+    path: /ping
 
 service2: 
   #image: soloio/example-service2:v0.2.2

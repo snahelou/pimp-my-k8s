@@ -103,10 +103,6 @@ const Slide117 = (images) => (
     style={{ borderWidth: "30", borderColor: "white", borderStyle: "solid", display: "inline-block", marginTop: "40px", width: "70%", marginBottom: "30px" }} />
 
     <Link href="https://github.com/reconquest/tubekit" > github.com/reconquest/tubekit</Link>
-
-    <Notes>
-        {/* tubectl  / tubectl +syst get po kube% / tubectl logs -f nginx%% / tubectl +def delete po nginx% --force --grace-period 0 / */}
-    </Notes>
   </div>
 
 );

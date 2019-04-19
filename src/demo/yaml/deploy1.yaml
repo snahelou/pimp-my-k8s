@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: example-service1
+  name: example-service1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: example-service1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: example-service1
+    spec:
+      containers:
+      - image: soloio/example-service1:v0.2.2
+        name: example-service1
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}

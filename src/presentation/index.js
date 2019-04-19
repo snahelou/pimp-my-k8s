@@ -5,7 +5,6 @@ import React from 'react';
 import {
   Deck,
   Slide,
-  Notes,
 } from 'spectacle';
 
 // Import theme
@@ -252,7 +251,7 @@ export default class Presentation extends React.Component {
         {/* Questions */}
         <Slide transition={["fade"]} bgColor="primary">
           <Slide141
-            question={images.question}
+            question={images.zenika_logo}
           />
         </Slide>
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
