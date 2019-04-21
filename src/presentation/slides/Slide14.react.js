@@ -30,6 +30,9 @@ const Slide140 = (images) => (
       <ListItem style={{ marginTop: "15px"}}>
         <Link href="https://github.com/aylei/kubectl-debug">github.com/aylei/kubectl-debug </Link>
       </ListItem>
+      <ListItem style={{ marginTop: "15px"}}>
+        <Link href="https://github.com/kubernetes-sigs/kustomize">kubernetes-sigs/kustomize </Link>
+      </ListItem>
     </List>
   </div>
 );

@@ -12,7 +12,7 @@ import {
 
 const Slide111 = (images) => (
   <List>
-    <Appear><Text bold textColor="secondary" textSize="1.7em" style={{ marginTop: "50px" }} >Tired of applying configuration in the wrong cluster/namespace?</Text></Appear>
+    <Appear><Text bold textColor="secondary" textSize="1.7em" style={{ marginTop: "50px" }} >What's the first thing you do when you discover a new tool?</Text></Appear>
     <Appear><Heading textColor="tertionary" style={{ marginTop: "50px" }}>Pimp your term!</Heading></Appear>
   </List>
 );
@@ -64,7 +64,7 @@ const Slide113 = (images) => (
     <Link href="https://github.com/jonmosco/kube-ps1"> github.com/jonmosco/kube-ps1</Link>
 
     <Notes>
-      <br> Kubernetes. </br>
+   Kubernetes.
     </Notes>
   </div>
 

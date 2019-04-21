@@ -120,51 +120,6 @@ export default class Presentation extends React.Component {
             mcgyver={images.mcgyver}
           />
         </Slide>
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
-
-        {/* I love yaml... Or not...  */}
-        <Slide transition={["fade"]} bgColor="primary">
-          <Slide101/>
-        </Slide>
-
-        <Slide transition={["fade"]} bgColor="primary">
-          <Slide102            
-            explain={images.explain}
-          />
-        </Slide>
-
-        <Slide transition={['fade']} bgColor="primary" >
-          <Slide104            
-            dryrun={images.dryrun}
-          />
-        </Slide>
-
-
-        <Slide transition={['fade']} bgColor="primary" >
-          <Slide105          
-            kubescore={images.kubescore}
-          />
-        </Slide>
-
-        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
-        {/* It's time to deploy  */}
-
-        <Slide transition={['fade']} bgColor="primary" >
-          <Slide121          
-          />
-        </Slide>
-        
-        <Slide transition={['fade']} bgColor="primary" >
-          <Slide122         
-            unittests={images.unittests}
-          />
-        </Slide>
-
-        <Slide transition={['fade']} bgColor="primary" >
-          <Slide123          
-            helmdiff={images.helmdiff}
-          />
-        </Slide>
 
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
         {/* I see what's happens */}
@@ -199,6 +154,56 @@ export default class Presentation extends React.Component {
             tubectl={images.tubectl}
           />
         </Slide>
+
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
+
+        {/* I love yaml... Or not...  */}
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide101/>
+        </Slide>
+        
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide104            
+            dryrun={images.dryrun}
+          />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide102            
+            explain={images.explain}
+          />
+        </Slide>
+
+
+
+
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide105          
+            kubescore={images.kubescore}
+          />
+        </Slide>
+
+        {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
+        {/* It's time to deploy  */}
+
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide121          
+          />
+        </Slide>
+        
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide122         
+            unittests={images.unittests}
+          />
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide123          
+            helmdiff={images.helmdiff}
+          />
+        </Slide>
+
+
         
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
         {/* I troubleshoot like a boss */}
