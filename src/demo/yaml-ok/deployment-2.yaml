@@ -29,6 +29,8 @@ spec:
           tcpSocket:
             port: http
         readinessProbe:
+          timeoutSeconds: 3
+          initialDelaySeconds: 3
           tcpSocket:
             port: http
         resources:

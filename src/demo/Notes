@@ -1,3 +1,7 @@
+0- Preparation 
+	helm del --purge demo
+ 
+
 1- YAML 
 
     1. Allez je génére mon yaml 
@@ -74,6 +78,7 @@
         Service ClusterIP = uniquement dans le cluster.. port-forward ! 
     
          sudo kubefwd svc
+         demo UI + demo postman
 
     2. Bon... débugger... 
 
@@ -82,8 +87,13 @@
         - command shift P 
         - squash... 
         
+        - nettoyage tubectl delete pods plank% +squa
+        - tubectl delete pods service2%
+
     3. Telepresence... Ok j'aimerai bien pouvoir changer complétement mon code à chaud... 
         (coupe kubefwd)
         k port-forward example-service1-df5fd55fd-jvdlf 8080
         telepresence --swap-deployment example-service2 --run-shell --expose 8080:8080
         
+        command shift P > task run ... 
+  

@@ -27,6 +27,11 @@ spec:
           initialDelaySeconds: 3
           tcpSocket:
             port: http
+        readinessProbe:
+          timeoutSeconds: 3
+          initialDelaySeconds: 3
+          tcpSocket:
+            port: http
         resources:
           limits:
             cpu: 1000m
