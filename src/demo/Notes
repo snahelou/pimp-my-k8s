@@ -1,7 +1,6 @@
 0- Preparation 
 	helm del --purge demo
  
-
 1- YAML 
 
     1. Allez je génére mon yaml 
@@ -22,7 +21,6 @@
         cd ../yaml-ok
         cat ./deployment-1.yaml # On a  mis les 2 mêmes probes... 
         kube-score ./deployment-1.yaml
-
 
 2- Helm 
 
@@ -53,6 +51,27 @@
     - généré des tests unitaire sur le chart
     - déployé en local et je suis capable de faire un diff entre mon values et ce qui tourne
 
+4- Demo 
+
+    1. Il est temps d'accèder à notre appli... 
+        Service ClusterIP = uniquement dans le cluster.. port-forward ! 
+    
+         sudo kubefwd svc + demo UI + demo postman
+
+    2. Bon... débugger... 
+        - J'ouvre mon svc2 via vscode
+        - J'install squash (squashctl + plugin vsc)
+        - command shift P / squash... 
+        
+        - nettoyage tubectl delete pods plank% +squa
+        - tubectl delete pods service2%
+
+    3. Telepresence... Ok j'aimerai bien pouvoir changer complétement mon code à chaud... (coupe kubefwd)
+        k port-forward example-service1-df5fd55fd-jvdlf 8080
+        telepresence --swap-deployment example-service2 --run-shell --expose 8080:8080
+        
+        command shift P > task run ... 
+  
 
 3- On sort un peu de notre example afin de vous montrer 2/3 outils indispensable
         Immaginons que j'ai des nginx à déployer... 
@@ -71,29 +90,3 @@
             tubectl +ng get pods
             tubectl +ng get pods ng%
             tubectl +ng delete po ng% --force --grace-period 0
-
-4- Demo 
-
-    1. Il est temps d'accèder à notre appli... 
-        Service ClusterIP = uniquement dans le cluster.. port-forward ! 
-    
-         sudo kubefwd svc
-         demo UI + demo postman
-
-    2. Bon... débugger... 
-
-        - J'ouvre mon svc2 via vscode
-        - J'install squash
-        - command shift P 
-        - squash... 
-        
-        - nettoyage tubectl delete pods plank% +squa
-        - tubectl delete pods service2%
-
-    3. Telepresence... Ok j'aimerai bien pouvoir changer complétement mon code à chaud... 
-        (coupe kubefwd)
-        k port-forward example-service1-df5fd55fd-jvdlf 8080
-        telepresence --swap-deployment example-service2 --run-shell --expose 8080:8080
-        
-        command shift P > task run ... 
-  
