@@ -64,7 +64,8 @@ const Slide105 = (images) => (
     />
 
     <Link href="https://github.com/zegl/kube-score" margin="60px 0 0 0" > github.com/zegl/kube-score</Link>
-
+    <br/>
+    <Link href="https://kubesec.io/">kubesec.io</Link>
     <Notes>
       <p/>Une fois que vous avez écrit du yaml, ça peut etre cool de vérifier que rien n'a été oublié. 
       <p/>Kube-score ça peut etre utile quand vous démarrez dans k8s. 

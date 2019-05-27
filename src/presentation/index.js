@@ -20,7 +20,7 @@ import PresentationSlide from "./slides/PresentationSlide.react.js";
 import  { Slide121, Slide122, Slide123 } from "./slides/Slide12.react.js";
 import  { Slide111, Slide112, Slide113, Slide114, Slide115, Slide116, Slide117 } from "./slides/Slide11.react.js";
 import  { Slide101, Slide102, Slide104, Slide105 } from "./slides/Slide10.react.js";
-import  { Slide131, Slide132, Slide133, Slide134 } from "./slides/Slide13.react.js";
+import  { Slide131, Slide132, Slide133, Slide134,Slide1341 } from "./slides/Slide13.react.js";
 import  { Slide91, Slide92, Slide93 } from "./slides/Slide09.react.js";
 import  { Slide140, Slide141 } from "./slides/Slide14.react.js";
 
@@ -67,7 +67,7 @@ const images = {
   kubefwd: require("../assets/kubefwd.gif"),
   squash: require("../assets/squash.png"),
   telepresence: require("../assets/bird-on-bricks.svg"),
-
+  inner: require("../assets/innerloop.png"),
   question: require("../assets/question.png")
 };
 
@@ -231,10 +231,10 @@ export default class Presentation extends React.Component {
             kubefwd={images.kubefwd}
           />
         </Slide>
-        
+
         <Slide transition={["fade"]} bgColor="primary">
-          <Slide133
-            squash={images.squash}
+          <Slide1341
+            inner={images.inner}
           />
         </Slide>
 
@@ -243,6 +243,14 @@ export default class Presentation extends React.Component {
             telepresence={images.telepresence}
           />
         </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide133
+            squash={images.squash}
+          />
+        </Slide>
+
+
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
 
         {/* Go further */}
