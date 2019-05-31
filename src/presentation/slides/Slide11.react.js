@@ -59,13 +59,26 @@ const Slide113 = (images) => (
   <div>
     <Heading textColor="secondary"> Kube-PS1 </Heading>
 
-    <Image src={images.gif} style={{ display: "inline-block", marginTop: "40px", width: "80%" }} />
+    <Image src={images.gif} style={{ display: "inline-block", marginTop: "20px", width: "90%" }} />
 
     <Link href="https://github.com/jonmosco/kube-ps1"> github.com/jonmosco/kube-ps1</Link>
 
     <Notes>
    Kubernetes.
     </Notes>
+  </div>
+
+);
+
+
+const Slide118 = (images) => (
+  <div>
+    <Heading textColor="secondary"> K9S </Heading>
+
+    <Image src={images.gif} style={{ display: "block", marginTop: "40px", width: "110%", maxWidth: "110%" }} />
+
+    <Link href="https://github.com/derailed/k9s">github.com/derailed/k9s</Link>
+
   </div>
 
 );
@@ -114,5 +127,6 @@ export {
   Slide114,
   Slide115,
   Slide116,
-  Slide117
+  Slide117,
+  Slide118
 }

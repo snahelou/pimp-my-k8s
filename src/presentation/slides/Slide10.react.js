@@ -64,8 +64,6 @@ const Slide105 = (images) => (
     />
 
     <Link href="https://github.com/zegl/kube-score" margin="60px 0 0 0" > github.com/zegl/kube-score</Link>
-    <br/>
-    <Link href="https://kubesec.io/">kubesec.io</Link>
     <Notes>
       <p/>Une fois que vous avez écrit du yaml, ça peut etre cool de vérifier que rien n'a été oublié. 
       <p/>Kube-score ça peut etre utile quand vous démarrez dans k8s. 
@@ -75,9 +73,34 @@ const Slide105 = (images) => (
 );
 
 
+const Slide106 = (images) => (
+  <div>
+    <Heading textColor="secondary" style={{ marginBottom: "10px" }} >Kubesec</Heading>
+
+    <Image 
+      src={images.kubesec} 
+      style={{ display: "inline-block", marginTop: "20px", width: "30%" }}
+    />
+    <br/>
+    <Link href="https://kubesec.io/" >kubesec.io</Link>
+    <br/>
+    <br/>
+    <Link href="https://github.com/stefanprodan/kubectl-kubesec" >github.com/stefanprodan/kubectl-kubesec</Link> 
+    <br/>
+    <Link href="https://github.com/stefanprodan/kubesec-webhook" >github.com/stefanprodan/kubesec-webhook</Link>
+    <Notes>
+      <p/>Kubesec est une api qui va aussi vérifier vos deploiements.
+      <p/> aussi dispo sous forme de plugin kubectl (krew)
+      <p/> Son avantage c'est qu'on peut facilement mettre un admission webhook qui va accepter/bloquer les deploiements en fonction du score 
+    </Notes>
+  </div>
+
+);
+
 export {
   Slide101,
   Slide102,
   Slide104,
-  Slide105
+  Slide105,
+  Slide106
 }

@@ -23,4 +23,13 @@ const TitleSlide = (images) => (
     </div>
 );
 
-export default TitleSlide;
+const DemoSlide = (images) => (
+  <div>
+    <Heading textColor="secondary"> DEMO </Heading>
+  </div>
+);
+
+export {
+  TitleSlide,
+  DemoSlide
+}

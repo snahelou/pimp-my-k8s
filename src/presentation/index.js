@@ -1,5 +1,8 @@
 // Import React
 import React from 'react';
+import CodeSlide from "spectacle-code-slide";
+
+/* eslint import/no-webpack-loader-syntax: off */
 
 // Import Spectacle Core tags
 import {
@@ -14,13 +17,13 @@ import "prismjs/themes/prism-okaidia.css";
 import "./index.css";
 
 // slides
-import TitleSlide from "./slides/TitleSlide.react.js";
+import {TitleSlide, DemoSlide} from "./slides/TitleSlide.react.js";
 import PresentationSlide from "./slides/PresentationSlide.react.js";
 
 import  { Slide121, Slide122, Slide123 } from "./slides/Slide12.react.js";
-import  { Slide111, Slide112, Slide113, Slide114, Slide115, Slide116, Slide117 } from "./slides/Slide11.react.js";
-import  { Slide101, Slide102, Slide104, Slide105 } from "./slides/Slide10.react.js";
-import  { Slide131, Slide132, Slide133, Slide134,Slide1341 } from "./slides/Slide13.react.js";
+import  { Slide111, Slide112, Slide113, Slide114, Slide115, Slide116, Slide117, Slide118 } from "./slides/Slide11.react.js";
+import  { Slide101, Slide102, Slide104, Slide105, Slide106 } from "./slides/Slide10.react.js";
+import  { Slide131, Slide132, Slide133, Slide134, Slide1340, Slide1341 } from "./slides/Slide13.react.js";
 import  { Slide91, Slide92, Slide93 } from "./slides/Slide09.react.js";
 import  { Slide140, Slide141 } from "./slides/Slide14.react.js";
 
@@ -40,6 +43,10 @@ const theme = createTheme(
   }
 );
 
+const code = {
+  kubesec: require("!raw-loader!../assets/kubesec.yaml")
+};
+
 const images = {
   k8s: require("../assets/k8spimped.png"),
   zenika_logo: require("../assets/zenika-logo.png"),
@@ -53,9 +60,11 @@ const images = {
   explain: require("../assets/explain.gif"),
   dryrun: require("../assets/dryrun.png"),
   kubescore: require("../assets/kube-score.png"),
+  kubesec: require("../assets/kubesec.png"),
 
   pimp: require("../assets/pimp.gif"),
   kubeps1gif: require("../assets/kube-ps1.gif"),
+  k9s: require("../assets/k9s.png"),
   kubectxdemo: require("../assets/kubectx-demo.gif"),
   kubectllogs: require("../assets/kubectllogs.png"),
   kubetail: require("../assets/kubetail.gif"),
@@ -142,6 +151,12 @@ export default class Presentation extends React.Component {
         
 
         <Slide transition={["fade"]} bgColor="primary">
+          <Slide118
+            gif={images.k9s}
+          />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
           <Slide112
             kubectxdemo={images.kubectxdemo}
           />
@@ -174,15 +189,41 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-
-
-
         <Slide transition={['fade']} bgColor="primary" >
           <Slide105          
             kubescore={images.kubescore}
           />
         </Slide>
 
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide106         
+            kubesec={images.kubesec}
+          />
+        </Slide>
+
+        <CodeSlide
+          transition={["fade"]}
+          lang="yaml"
+          bgColor="black"
+          textSize=".98em"
+          code={code.kubesec}
+          ranges={[
+            {
+              loc: [1, 2],
+            },
+            {
+              loc: [3, 5],
+            },
+            {
+              loc: [11, 15],
+            },
+            {
+              loc: [43 , 47],
+            }
+
+          ]}
+        />
+        
         {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  */}
         {/* It's time to deploy  */}
 
@@ -201,6 +242,12 @@ export default class Presentation extends React.Component {
           <Slide123          
             helmdiff={images.helmdiff}
           />
+        </Slide>
+
+
+        
+        <Slide transition={['fade']} bgColor="primary" >
+          <DemoSlide />
         </Slide>
 
 
@@ -229,6 +276,11 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="primary">
           <Slide132
             kubefwd={images.kubefwd}
+          />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide1340
           />
         </Slide>
 

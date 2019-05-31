@@ -52,6 +52,13 @@ const Slide133 = (images) => (
   </div>
 );
  
+const Slide1340 = (images) => (
+  <List>
+    <Appear><Text bold textColor="secondary" textSize="1.7em" style={{ marginTop: "50px" }} >Ok but how to reduce time to market?</Text></Appear>
+    <Appear><Heading textColor="tertionary" style={{ marginTop: "50px" }}>Inner-loop development workflow</Heading></Appear>
+  </List>
+);
+
 const Slide1341 = (images) => (
   <div>
 
@@ -92,6 +99,7 @@ export {
   Slide131,
   Slide132,
   Slide133,
+  Slide1340,
   Slide1341,
   Slide134
 }
