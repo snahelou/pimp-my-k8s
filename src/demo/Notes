@@ -4,9 +4,11 @@
 1- YAML 
 
     1. Allez je génére mon yaml 
+        cd $(mktemp -d)
         k create ns demo-yaml && kubens demo-yaml
         k run example-service1 --image=soloio/example-service1:v0.2.2 --replicas=1 --port=8080 -o yaml --dry-run
         k run example-service2 --image=soloio/example-service2:v0.2.2 --replicas=1 --port=8080 -o yaml --dry-run
+        k apply -f .
         k expose deployment example-service1 --port 80 --target-port 8080 --type ClusterIP -o yaml --dry-run
         k expose deployment example-service2 --port 80 --target-port 8080 --type ClusterIP -o yaml --dry-run
 
@@ -17,23 +19,16 @@
         k explain deploy.spec.template.spec.containers
         k explain deploy.spec.template.spec.containers.imagePullPolicy
 
-    4. Bon ... Ok c'est corrigé... 
-        cd ../yaml-ok
-        cat ./deployment-1.yaml # On a  mis les 2 mêmes probes... 
-        kube-score ./deployment-1.yaml
-
 2- Helm 
 
     0. Pour aller plus vite le chart est déjà préparé vite fait donc on peut l'installer avec le setting par défaut. 
-        helm install --name demo ./demo --namespace demo-helm
+        cd ~/Projects/talks/DEVFEST/pimp-my-k8s/src/demo
+        helm install --name demo . --namespace demo-helm
 
     2. Par contre je devais corriger la probe... 
         helm template . | kube-score -
 
-    2. on aimerait bien que la readyness probe pointe sur /ping (pour s'assurer que tout fonctionne)
-        helm template . -f values.yaml | kube-score -
-        
-    3. Nouvele version de l'appli (/ping) ...  et si on le mets direct en valeur par défaut ? 
+    3. Et si on le mets direct en valeur par défaut ? 
 
         > On modifie le values par défaut et on joue les tests
         helm unittest .
@@ -42,8 +37,8 @@
 
     4. Du coup j'aimerai bien deploy mais comment je peux faire un diff ? 
         > Faire un fichier values, je change le path 
-        helm diff upgrade demo ./demo -f values.yaml
-        helm upgrade demo ./demo -f values.yaml
+        helm diff upgrade demo . -f ../values.yaml
+        helm upgrade demo . -f ../values.yaml
 
 ---> Résumé : On est partie de 2 images dockers, on a :
     - généré facilement du yaml (de qualité / scoré) 
@@ -62,17 +57,21 @@
         - J'ouvre mon svc2 via vscode
         - J'install squash (squashctl + plugin vsc)
         - command shift P / squash... 
-        
-        - nettoyage tubectl delete pods plank% +squa
-        - tubectl delete pods service2%
+         
+        - Nettoyage squashctl utils delete-attachments 
 
     3. Telepresence... Ok j'aimerai bien pouvoir changer complétement mon code à chaud... (coupe kubefwd)
         k port-forward example-service1-df5fd55fd-jvdlf 8080
-        telepresence --swap-deployment example-service2 --run-shell --expose 8080:8080
         
-        command shift P > task run ... 
+        Je fais tourner en local... et je check avec postman que j'ai toujours le pb 
+        Je lance telepresence
+        telepresence --swap-deployment example-service2 --run-shell --expose 8080:8080
+        Je fix mon code et je relance  > command shift P > task run ... 
+        Je check les pods et je montre que j'ai bien un pod proxy
+        
+        
   
-
+// SKIP
 3- On sort un peu de notre example afin de vous montrer 2/3 outils indispensable
         Immaginons que j'ai des nginx à déployer... 
 

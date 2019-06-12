@@ -18,7 +18,11 @@ const TitleSlide = (images) => (
         <Text margin="40px 0 0 0" textColor="tertiary">S01E01: Laptop Tips</Text>
 
         <Notes>
-            <br/>L'idée de se talk, c'est de présenter une petite dizaine de projet open-source qui vous serons utile si vous êtes ammener a développer et a maintenir des applications containerisées sous Kubernetes.
+            <br/>L'idée de se talk, c'est de présenter une petite dizaine de projet open-source qui vous serons p/e utile si vous êtes ammené à développer et à maintenir des applications containerisées sous Kubernetes.
+            <br/>
+            <br/>Theme du cinéma, l'épisode 1 de cette série est basé sur les outils qui servent au quotidien d'un dev ou d'un ops
+            <br/>
+            <br/>L'écosysteme autour de k8s est énorme, donc j'en ai choisi 10, c'est clairement pas exaustif :) 
         </Notes>
     </div>
 );

@@ -15,8 +15,9 @@ const Slide101 = (images) => (
       <Appear><Heading textColor="tertionary">Because you don't need!</Heading></Appear>
     </List>
     <Notes>
-      <p/>Donc on va commencé par le commencement... Le YAML des ressources... 
-      <p/>Y'a des gens qui aiment ça dans la salle ?  
+      <p/>Avec ça on est pas mal... Sauf que ... Maintenant faut faire du Yaml... 
+      <p/>Y'a des gens qui aiment ça dans la salle ? 
+      <p/>En principe à ce moment la, j'ai tous les devops qui leve la main :)  
     </Notes>
   </div>
 
@@ -33,6 +34,8 @@ const Slide102 = (images) => (
     <Notes>
       <p/>Commande native
       <p/>pas besoin d'ouvrir la doc,  en plus vous pouvez chercher en profondeur chacun des champs.
+      <p/>
+      <p/> Donc c'est interessant, mais je dois quand même taper le yaml donc c'est pas suffisant...
     </Notes>
 
   </div>

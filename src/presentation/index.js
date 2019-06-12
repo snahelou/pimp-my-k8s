@@ -149,20 +149,17 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         
-
-        <Slide transition={["fade"]} bgColor="primary">
-          <Slide118
-            gif={images.k9s}
-          />
-        </Slide>
-
         <Slide transition={["fade"]} bgColor="primary">
           <Slide112
             kubectxdemo={images.kubectxdemo}
           />
         </Slide>
 
-
+        <Slide transition={["fade"]} bgColor="primary">
+          <Slide118
+            gif={images.k9s}
+          />
+        </Slide>
 
         <Slide transition={["fade"]} bgColor="primary">
           <Slide117
@@ -176,19 +173,19 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="primary">
           <Slide101/>
         </Slide>
-        
-        <Slide transition={['fade']} bgColor="primary" >
-          <Slide104            
-            dryrun={images.dryrun}
-          />
-        </Slide>
 
         <Slide transition={["fade"]} bgColor="primary">
           <Slide102            
             explain={images.explain}
           />
         </Slide>
-
+        
+        <Slide transition={['fade']} bgColor="primary" >
+          <Slide104            
+            dryrun={images.dryrun}
+          />
+        </Slide>
+        
         <Slide transition={['fade']} bgColor="primary" >
           <Slide105          
             kubescore={images.kubescore}
